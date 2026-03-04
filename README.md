@@ -123,7 +123,7 @@ outputs/
 The Account Memo captures structured configuration extracted from transcripts.
 
 Example structure:
-
+```
 {
 "account_id": "bens_electric",
 "company_name": "Ben's Electric",
@@ -135,7 +135,7 @@ Example structure:
 "questions_or_unknowns": [],
 "confidence_level": "medium"
 }
-
+```
 
 Purpose:
 - Provide a structured representation of operational rules discussed during calls.
@@ -165,7 +165,7 @@ Purpose:
 The system tracks differences between configuration versions.
 
 Example change log structure:
-
+```
 {
 "stage": "onboarding_update",
 "summary": "Onboarding updated metadata and clarification notes only.",
@@ -174,7 +174,7 @@ Example change log structure:
 "notes"
 ]
 }
-
+```
 
 Purpose:
 - Highlight configuration updates between demo and onboarding stages.
@@ -185,18 +185,20 @@ Purpose:
 # Running the Pipeline
 
 ## Step 1: Create Python Environment
-
+```
 python -m venv venv
-
+```
 
 Activate the environment:
+```
 venv\Scripts\activate
-
+```
 ---
 
 ## Step 2: Install Dependencies
+```
 pip install -r requirements.txt
-
+```
 
 ---
 
@@ -222,10 +224,11 @@ python -m scripts.run_pipeline
 
 The pipeline executes the following stages:
 
+```
 DEMO_V1
 ONBOARDING_V2
 REPORT
-
+```
 
 ---
 
@@ -235,7 +238,7 @@ After execution, the system produces a summary report.
 
 Example:
 
-
+```
 {
 "accounts_processed": 1,
 "v1_generated": 1,
@@ -245,7 +248,7 @@ Example:
 "medium": 1
 }
 }
-
+```
 
 Purpose:
 - Provide high-level insight into pipeline results.
