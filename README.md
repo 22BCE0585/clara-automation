@@ -1,5 +1,11 @@
 # Clara AI Automation Pipeline
 
+![Python](https://img.shields.io/badge/python-3.10+-blue)
+![Pipeline Status](https://img.shields.io/badge/pipeline-working-brightgreen)
+![License](https://img.shields.io/badge/license-MIT-green)
+
+Automation pipeline for extracting AI call agent configuration from demo and onboarding transcripts.
+
 ## Overview
 - This project implements an automation pipeline that simulates Clara’s internal onboarding workflow for configuring AI call agents for commercial customers.
 - The system processes two types of call transcripts:
