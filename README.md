@@ -48,8 +48,7 @@ clara-automation/
 │   │   └── bens_electric_demo.txt
 │   │
 │   └── onboarding/
-│       ├── bens_electric_onboarding.txt
-│       └── bens_electric_onboarding.m4a
+│       └── bens_electric_onboarding.txt
 │
 ├── scripts/
 │   ├── extract_demo.py
@@ -140,8 +139,7 @@ dataset/
 │   └── bens_electric_demo.txt
 │
 └── onboarding/
-    ├── bens_electric_onboarding.txt
-    └── bens_electric_onboarding.m4a
+    └── bens_electric_onboarding.txt
 ```
 
 Notes:
