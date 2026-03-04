@@ -206,8 +206,9 @@ pip install -r requirements.txt
 
 Create a `.env` file if LLM extraction is enabled.
 
+```
 GROQ_API_KEY=your_api_key_here
-
+```
 
 If no API key is provided:
 - The pipeline falls back to regex-based extraction.
@@ -218,9 +219,9 @@ If no API key is provided:
 
 Run the automation pipeline:
 
-
+```
 python -m scripts.run_pipeline
-
+```
 
 The pipeline executes the following stages:
 
@@ -273,19 +274,19 @@ This ensures stable behavior even if one method fails.
 
 Example log behavior:
 
-
+```
 v1 already exists — skipping
 v2 already exists — skipping
-
+```
 
 ---
 
 ## Unknown Detection
 - When information is not present in transcripts, the system records it under:
 
-
+```
 questions_or_unknowns
-
+```
 
 This prevents the system from guessing or hallucinating missing configuration.
 
@@ -323,3 +324,15 @@ This project demonstrates a complete automation pipeline capable of:
 - Producing reproducible, versioned outputs
 
 The system mirrors the operational workflow used by AI voice platforms when configuring new customers.
+
+---
+
+## Author
+
+**Pokala Gopi Lakshman**  
+B.Tech Computer Science and Engineering  
+
+- Registration Number: 22BCE0585  
+- Email: pokala.gopilakshman@gmail.com
+
+---
