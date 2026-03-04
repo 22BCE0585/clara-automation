@@ -90,7 +90,7 @@ clara-automation/
 ├── README.md
 └── .gitignore
 ```
-- Outputs are generated after running the pipeline and are not stored in the repository.
+- Outputs are generated after running the pipeline
 
 # Workflow
 
