@@ -5,6 +5,15 @@
 
 Automation pipeline for extracting AI call agent configuration from demo and onboarding transcripts.
 
+---
+## Quick Start
+```
+python -m venv venv
+pip install -r requirements.txt
+python -m scripts.run_pipeline
+```
+---
+
 ## Overview
 - This project implements an automation pipeline that simulates Clara’s internal onboarding workflow for configuring AI call agents for commercial customers.
 - The system processes two types of call transcripts:
