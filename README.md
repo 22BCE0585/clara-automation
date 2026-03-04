@@ -31,7 +31,56 @@ Automation pipeline for extracting AI call agent configuration from demo and onb
 
 ## Project Structure
 
-![Folder Structure](docs/folder_structure.png)
+```
+clara-automation/
+│
+├── dataset/
+│   ├── demo/
+│   │   └── bens_electric_demo.txt
+│   │
+│   └── onboarding/
+│       ├── bens_electric_onboarding.txt
+│       └── bens_electric_onboarding.m4a
+│
+├── scripts/
+│   ├── extract_demo.py
+│   ├── patch_version.py
+│   ├── run_pipeline.py
+│   ├── llm_extractor.py
+│   │
+│   ├── extractors/
+│   │   ├── company_extractor.py
+│   │   ├── flow_summary.py
+│   │   └── rule_extractor.py
+│   │
+│   └── utils/
+│       ├── logging_utils.py
+│       ├── report_generator.py
+│       └── validators.py
+│
+├── docs/
+│   ├── architecture.png
+│   └── folder_structure.png
+│
+├── outputs/
+│   ├── accounts/
+│   │   └── bens_electric/
+│   │       ├── v1/
+│   │       │   ├── memo.json
+│   │       │   └── agent_spec.json
+│   │       │
+│   │       └── v2/
+│   │           ├── memo.json
+│   │           ├── agent_spec.json
+│   │           └── changes.json
+│   │
+│   └── report.json
+│
+├── docker-compose.yml
+├── requirements.txt
+├── README.md
+└── .gitignore
+```
 
 # Workflow
 
