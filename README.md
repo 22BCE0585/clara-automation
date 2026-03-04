@@ -53,23 +53,12 @@ clara-automation/
 │
 ├── scripts/
 │   ├── extract_demo.py
+│   ├── extract_onboarding.py
 │   ├── patch_version.py
 │   ├── run_pipeline.py
 │   ├── llm_extractor.py
-│   │
-│   ├── extractors/
-│   │   ├── company_extractor.py
-│   │   ├── flow_summary.py
-│   │   └── rule_extractor.py
-│   │
-│   └── utils/
-│       ├── logging_utils.py
-│       ├── report_generator.py
-│       └── validators.py
-│
-├── docs/
-│   ├── architecture.png
-│   └── folder_structure.png
+│   ├── report_generator.py
+│   └── utils.py
 │
 ├── outputs/
 │   ├── accounts/
@@ -85,10 +74,17 @@ clara-automation/
 │   │
 │   └── report.json
 │
+├── workflows/
+│   └── clara_pipeline.json
+│
+├── docs/
+│   ├── architecture.png
+│   └── folder_structure.png
+│
 ├── docker-compose.yml
 ├── requirements.txt
-├── README.md
-└── .gitignore
+├── .gitignore
+└── README.md
 ```
 - Outputs are generated after running the pipeline
 
