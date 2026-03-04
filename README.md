@@ -2,7 +2,6 @@
 
 ![Python](https://img.shields.io/badge/python-3.10+-blue)
 ![Pipeline Status](https://img.shields.io/badge/pipeline-working-brightgreen)
-![License](https://img.shields.io/badge/license-MIT-green)
 
 Automation pipeline for extracting AI call agent configuration from demo and onboarding transcripts.
 
@@ -24,6 +23,15 @@ Automation pipeline for extracting AI call agent configuration from demo and onb
 - Produce a structured **change log** describing what changed between versions.
 
 ---
+
+---
+## Architecture Diagram
+
+![Architecture](docs/architecture.png) 
+
+## Project Structure
+
+![Folder Structure](docs/folder_structure.png)
 
 # Workflow
 
