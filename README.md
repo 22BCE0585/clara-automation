@@ -80,12 +80,12 @@ Onboarding transcripts:
 Example dataset structure:
 
 dataset/
-├─ demo/
-│ └─ bens_electric_demo.txt
+├── demo/
+│ └── bens_electric_demo.txt
 │
-└─ onboarding/
-├─ bens_electric_onboarding.txt
-└─ bens_electric_onboarding.m4a
+└── onboarding/
+├── bens_electric_onboarding.txt
+└── bens_electric_onboarding.m4a
 
 
 Notes:
@@ -99,19 +99,18 @@ Notes:
 After running the pipeline, results are stored under the `outputs` directory.
 
 outputs/
-└─ accounts/
-└─ bens_electric/
-├─ v1/
-│ ├─ memo.json
-│ └─ agent_spec.json
+├── accounts/
+│ └── bens_electric/
+│ ├── v1/
+│ │ ├── memo.json
+│ │ └── agent_spec.json
+│ │
+│ └── v2/
+│ ├── memo.json
+│ ├── agent_spec.json
+│ └── changes.json
 │
-└─ v2/
-├─ memo.json
-├─ agent_spec.json
-└─ changes.json
-
-outputs/
-└─ report.json
+└── report.json
 
 
 ---
