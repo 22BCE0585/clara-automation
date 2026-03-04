@@ -1,0 +1,39 @@
+{
+    "account_id": "bens_electric",
+    "company_name": "that",
+    "business_hours": {
+        "days": [],
+        "start": "",
+        "end": "",
+        "timezone": "EST"
+    },
+    "office_address": "",
+    "services_supported": [
+        "electrical"
+    ],
+    "emergency_definition": [],
+    "emergency_routing_rules": {
+        "transfer_required": true,
+        "transfer_target": "dispatch",
+        "timeout_seconds": "30",
+        "fallback_action": ""
+    },
+    "non_emergency_routing_rules": {
+        "collect_details": true,
+        "followup_during_business_hours": true
+    },
+    "call_transfer_rules": {
+        "timeout_seconds": "30",
+        "retry_attempts": "",
+        "failure_message": ""
+    },
+    "integration_constraints": [],
+    "after_hours_flow_summary": "After hours handling: Emergency calls trigger immediate transfer attempt. Non-emergency calls are collected and scheduled for follow-up during business hours.",
+    "office_hours_flow_summary": "During business hours: Emergency calls are transferred to dispatch. Transfer timeout set to 30 seconds. Non-emergency calls are collected and routed appropriately.",
+    "questions_or_unknowns": [
+        "Business hours not clearly discussed during demo.",
+        "Emergency definitions not clarified during demo."
+    ],
+    "notes": "Generated from demo transcript (v1).",
+    "confidence_level": "medium"
+}

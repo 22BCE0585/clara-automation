@@ -1,0 +1,24 @@
+{
+    "stage": "onboarding_update",
+    "summary": "Onboarding updated metadata and clarification notes only. No operational routing changes detected.",
+    "changes_detected": [
+        "questions_or_unknowns",
+        "notes"
+    ],
+    "details": {
+        "questions_or_unknowns": {
+            "old": [
+                "Business hours not clearly discussed during demo.",
+                "Emergency definitions not clarified during demo."
+            ],
+            "new": [
+                "Business hours not confirmed during onboarding.",
+                "Emergency definitions not explicitly confirmed during onboarding."
+            ]
+        },
+        "notes": {
+            "old": "Generated from demo transcript (v1).",
+            "new": "Updated from onboarding transcript (v2)."
+        }
+    }
+}
