@@ -1,0 +1,56 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "21751ce9-f568-42c8-b5db-64c71490d871",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "language": "pythonNative",
+        "pythonCode": "import subprocess\n\nsubprocess.run([\"python\", \"-m\", \"scripts.run_pipeline\"])"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        208,
+        0
+      ],
+      "id": "f78d3af2-e099-4b2e-9ef7-a92c29a80cfb",
+      "name": "Code in Python"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Code in Python",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "b12f630d-026c-4234-9ca4-7f1eb6058aac",
+  "meta": {
+    "instanceId": "330fa80031796c6c376a26d7ed48a7b82f3a38530e5e3402bea2c14a604682ea"
+  },
+  "id": "TqNO3LB5IufMtN0g",
+  "tags": []
+}
