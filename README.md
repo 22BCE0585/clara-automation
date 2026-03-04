@@ -5,6 +5,15 @@
 
 Automation pipeline for extracting AI call agent configuration from demo and onboarding transcripts.
 
+---
+## Quick Start
+```
+python -m venv venv
+pip install -r requirements.txt
+python -m scripts.run_pipeline
+```
+---
+
 ## Overview
 - This project implements an automation pipeline that simulates Clara’s internal onboarding workflow for configuring AI call agents for commercial customers.
 - The system processes two types of call transcripts:
@@ -31,7 +40,57 @@ Automation pipeline for extracting AI call agent configuration from demo and onb
 
 ## Project Structure
 
-![Folder Structure](docs/folder_structure.png)
+```
+clara-automation/
+│
+├── dataset/
+│   ├── demo/
+│   │   └── bens_electric_demo.txt
+│   │
+│   └── onboarding/
+│       ├── bens_electric_onboarding.txt
+│       └── bens_electric_onboarding.m4a
+│
+├── scripts/
+│   ├── extract_demo.py
+│   ├── patch_version.py
+│   ├── run_pipeline.py
+│   ├── llm_extractor.py
+│   │
+│   ├── extractors/
+│   │   ├── company_extractor.py
+│   │   ├── flow_summary.py
+│   │   └── rule_extractor.py
+│   │
+│   └── utils/
+│       ├── logging_utils.py
+│       ├── report_generator.py
+│       └── validators.py
+│
+├── docs/
+│   ├── architecture.png
+│   └── folder_structure.png
+│
+├── outputs/
+│   ├── accounts/
+│   │   └── bens_electric/
+│   │       ├── v1/
+│   │       │   ├── memo.json
+│   │       │   └── agent_spec.json
+│   │       │
+│   │       └── v2/
+│   │           ├── memo.json
+│   │           ├── agent_spec.json
+│   │           └── changes.json
+│   │
+│   └── report.json
+│
+├── docker-compose.yml
+├── requirements.txt
+├── README.md
+└── .gitignore
+```
+- Outputs are generated after running the pipeline and are not stored in the repository.
 
 # Workflow
 
@@ -79,14 +138,15 @@ Onboarding transcripts:
 
 Example dataset structure:
 
+```
 dataset/
-├─ demo/
-│ └─ bens_electric_demo.txt
+├── demo/
+│   └── bens_electric_demo.txt
 │
-└─ onboarding/
-├─ bens_electric_onboarding.txt
-└─ bens_electric_onboarding.m4a
-
+└── onboarding/
+    ├── bens_electric_onboarding.txt
+    └── bens_electric_onboarding.m4a
+```
 
 Notes:
 - Only `.txt` files are used by the pipeline.
@@ -94,24 +154,25 @@ Notes:
 
 ---
 
-# Output Structure
+## Output Structure
 
 After running the pipeline, results are stored under the `outputs` directory.
 
+```
 outputs/
-└─ accounts/
-└─ bens_electric/
-├─ v1/
-│ ├─ memo.json
-│ └─ agent_spec.json
+├── accounts/
+│   └── bens_electric/
+│       ├── v1/
+│       │   ├── memo.json
+│       │   └── agent_spec.json
+│       │
+│       └── v2/
+│           ├── memo.json
+│           ├── agent_spec.json
+│           └── changes.json
 │
-└─ v2/
-├─ memo.json
-├─ agent_spec.json
-└─ changes.json
-
-outputs/
-└─ report.json
+└── report.json
+```
 
 
 ---
@@ -121,7 +182,7 @@ outputs/
 The Account Memo captures structured configuration extracted from transcripts.
 
 Example structure:
-
+```
 {
 "account_id": "bens_electric",
 "company_name": "Ben's Electric",
@@ -133,7 +194,7 @@ Example structure:
 "questions_or_unknowns": [],
 "confidence_level": "medium"
 }
-
+```
 
 Purpose:
 - Provide a structured representation of operational rules discussed during calls.
@@ -163,7 +224,7 @@ Purpose:
 The system tracks differences between configuration versions.
 
 Example change log structure:
-
+```
 {
 "stage": "onboarding_update",
 "summary": "Onboarding updated metadata and clarification notes only.",
@@ -172,7 +233,7 @@ Example change log structure:
 "notes"
 ]
 }
-
+```
 
 Purpose:
 - Highlight configuration updates between demo and onboarding stages.
@@ -183,18 +244,20 @@ Purpose:
 # Running the Pipeline
 
 ## Step 1: Create Python Environment
-
+```
 python -m venv venv
-
+```
 
 Activate the environment:
+```
 venv\Scripts\activate
-
+```
 ---
 
 ## Step 2: Install Dependencies
+```
 pip install -r requirements.txt
-
+```
 
 ---
 
@@ -202,8 +265,9 @@ pip install -r requirements.txt
 
 Create a `.env` file if LLM extraction is enabled.
 
+```
 GROQ_API_KEY=your_api_key_here
-
+```
 
 If no API key is provided:
 - The pipeline falls back to regex-based extraction.
@@ -214,16 +278,17 @@ If no API key is provided:
 
 Run the automation pipeline:
 
-
+```
 python -m scripts.run_pipeline
-
+```
 
 The pipeline executes the following stages:
 
+```
 DEMO_V1
 ONBOARDING_V2
 REPORT
-
+```
 
 ---
 
@@ -233,7 +298,7 @@ After execution, the system produces a summary report.
 
 Example:
 
-
+```
 {
 "accounts_processed": 1,
 "v1_generated": 1,
@@ -243,7 +308,7 @@ Example:
 "medium": 1
 }
 }
-
+```
 
 Purpose:
 - Provide high-level insight into pipeline results.
@@ -268,19 +333,19 @@ This ensures stable behavior even if one method fails.
 
 Example log behavior:
 
-
+```
 v1 already exists — skipping
 v2 already exists — skipping
-
+```
 
 ---
 
 ## Unknown Detection
 - When information is not present in transcripts, the system records it under:
 
-
+```
 questions_or_unknowns
-
+```
 
 This prevents the system from guessing or hallucinating missing configuration.
 
@@ -318,3 +383,15 @@ This project demonstrates a complete automation pipeline capable of:
 - Producing reproducible, versioned outputs
 
 The system mirrors the operational workflow used by AI voice platforms when configuring new customers.
+
+---
+
+## Author
+
+**Pokala Gopi Lakshman**  
+B.Tech Computer Science and Engineering  
+
+- Registration Number: 22BCE0585  
+- Email: pokala.gopilakshman@gmail.com
+
+---
